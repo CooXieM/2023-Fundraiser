@@ -2,11 +2,13 @@
 
 
 # Main Routine Goes Here
-want_instructions = input("Do you wish to see the instructions? ")
+while True:
+    want_instructions = input("Do you want to read the instructions? ").lower()
 
-if want_instructions == "yes":
-    print("instructions goes here")
-elif want_instructions == "no":
-    pass
-else:
-    print("Please answer Yes / No")
+    if want_instructions == "yes" or want_instructions == "y":
+        print("instructions goes here")
+    elif want_instructions == "no" or want_instructions == "n":
+        pass
+    else:
+        print("Please answer Yes / No")
+print("We're Done")

@@ -46,10 +46,10 @@ def cash_card(question):
         response = input(question).lower()
 
         if response == "cash" or response == "ca":
-            print("You choose Cash")
+            return response
 
         elif response == "card" or response == "cr":
-            print("you choose card")
+            return response
 
         else:
             print("Please pick Cash or Card")
@@ -64,7 +64,6 @@ tickets_sold = 0
 price = 0
 profit = 0
 # ask users if they want to see instructions
-
 want_instructions = yes_no("Do you want to see the instructions")
 
 if want_instructions == "yes":
@@ -72,9 +71,17 @@ if want_instructions == "yes":
 
 print("\n program continues")
 print()
+# ask users if they want to pay with cash or card
+payment_type = cash_card("please pick your payment type: Cash / Card")
+
+if payment_type == "cash" or payment_type == "ca":
+    print("\n you chose cash")
+elif payment_type == "card" or payment_type == "cr":
+    print("\n you chose card")
+
 # loop to sell tickets
 while tickets_sold < MAX_TICKETS:
-    name = not_blank("\n Enter your name (or 'xxx' to quit) ")
+    name = not_blank("\nEnter your name (or 'xxx' to quit) ")
 
     if name == 'xxx':
         break

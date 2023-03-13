@@ -1,25 +1,18 @@
-# Function goes here
-def cash_card(question):
-    while True:
+# Cash or credit function
+
+def cash_credit(question):
+    valid = False
+    while not valid:
         response = input(question).lower()
 
-        if response == "cash" or response == "ca":
-            cash_card("Choose a payment method (Cash / Card): ")
-            return "cash"
-        elif response == "card" or response == "cr":
-            return "card"
+        if response == 'card' or response == 'ca':
+            response = 'you chose card'
+            return response
+        elif response == 'cash' or response == "cash":
+            response = 'no'
+            return response
         else:
-            print("Please enter Cash or Card")
-
-    # Main routine goes here
-    while True:
-        pass
+            print('Please choose Cash or Card')
 
 
-
-
-
-
-
-
-
+print("You chose {} as your payment")
